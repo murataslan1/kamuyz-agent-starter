@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  openclaw-gateway:
+    image: openclaw/openclaw:latest
+    container_name: openclaw_core
+    restart: unless-stopped
+
+    # Güvenlik: non-root kullanıcı
+    user: "1000:1000"
+
+    # Güvenlik: sadece loopback'e bind
+    ports:
+      - "127.0.0.1:18789:18789"
+
+    environment:
+      - NODE_ENV=production
+      - OPENCLAW_GATEWAY_PORT=18789
+
+      # LLM Provider — yalnızca gerekli olanı tanımlayın
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - OLLAMA_HOST=http://ollama:11434
+
+      # Telegram entegrasyonu
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+
+      # Güvenlik — telemetri kapatma (opsiyonel)
+      - SUPERPORWERS_DISABLE_TELEMETRY=true
+
+    volumes:
+      # Konfigürasyon — salt okunur
+      - ./config:/home/node/.openclaw/config:ro
+      # Çalışma alanı
+      - ./workspace:/home/node/.openclaw/workspace
+      # Loglar
+      - ./logs:/home/node/.openclaw/logs
+
+    # Güvenlik sıkılaştırma
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    # Sadece config salt okunur, workspace yazılabilir
+    read_only: false
+
+    # Kaynak sınırlandırma
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+
+    # Ağ izolasyonu — sadece loopback
+    network_mode: bridge
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Opsiyonel: yerel LLM (Ollama)
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: ollama
+  #   restart: unless-stopped
+  #   user: "1000:1000"
+  #   ports:
+  #     - "127.0.0.1:11434:11434"
+  #   volumes:
+  #     - ./ollama:/root/.ollama
+  #   security_opt:
+  #     - no-new-privileges:true
+  #   cap_drop:
+  #     - ALL
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         memory: 8G
+  #         cpus: '4.0'
