@@ -62,11 +62,9 @@ github.com/murataslan1/kamuyz-agent-starter/tree/main/kamu-yz-agent-export
 
 B2B Kullanım Vakaları (12 sektör)
 Finans, İK, BT, hukuk, satış, kamu için somut senaryolar + ROI hesaplama şablonu.
-(Private repoda: github.com/murataslan1/kamuyz-pazarlama)
 
-Pazarlama Materyalleri (Private Repo)
-10 MP4 video (farklı senaryo ve kurgularda), 12 PDF, 6 HTML sunum deck'i, 3 PPTX, LinkedIn/X/e-posta/landing page içerikleri.
-github.com/murataslan1/kamuyz-pazarlama
+Kurumsal B2B Paketleri
+3 kademeli hizmet paketi: Farkındalık (ücretsiz), Prototip, Entegrasyon (kurumsal). ISO 42001 uyumlu işletim prosedürleri dahil.
 
 KamuKOD 210 ile Çapraz Yönlendirme
 KamuKOD 210 (ücretli kurs) ↔ KamuYZ E1-E2-E3 (ücretsiz) ↔ B2B Paketler (kurumsal). Birbirini besleyen zincir yapısı kuruldu.
