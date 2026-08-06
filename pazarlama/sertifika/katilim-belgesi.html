@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Sertifika — KamuKOD 210</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0D0D0D; display:flex; justify-content:center; align-items:center; min-height:100vh; font-family:'Outfit',system-ui,sans-serif; }
+  .cert {
+    width:1000px; height:700px;
+    background:#0D0D0D;
+    border:2px solid rgba(212,133,106,0.3);
+    border-radius:20px;
+    padding:60px 80px;
+    position:relative;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+  }
+  .cert::before {
+    content:''; position:absolute; inset:15px;
+    border:1px solid rgba(212,133,106,0.1);
+    border-radius:12px;
+    pointer-events:none;
+  }
+  .cert-kicker { font-family:'Space Mono',monospace; font-size:13px; letter-spacing:5px; color:#D4856A; text-transform:uppercase; margin-bottom:24px; }
+  .cert-title { font-size:48px; font-weight:800; margin-bottom:12px; text-align:center; }
+  .cert-body { font-size:20px; color:#94a3b8; text-align:center; margin-bottom:8px; }
+  .cert-name { font-size:42px; font-weight:300; font-style:italic; color:#D4856A; margin:30px 0; font-family:'Caveat',cursive; }
+  .cert-line { width:200px; height:1px; background:rgba(212,133,106,0.3); margin:20px 0; }
+  .cert-footer { display:flex; justify-content:space-between; width:100%; margin-top:40px; font-family:'Space Mono',monospace; font-size:12px; color:#64748b; }
+  @media print { body { background:#fff; } .cert { border-color:#ccc; } }
+</style>
+</head>
+<body>
+<div class="cert">
+  <div class="cert-kicker">Katılım Belgesi</div>
+  <div class="cert-title">KamuKOD Atölye 210</div>
+  <div class="cert-body">OpenClaw & Hermes ile Yapay Zeka Ajanları</div>
+  <div class="cert-line"></div>
+  <div class="cert-name" contenteditable="true">[Katılımcı Adı Soyadı]</div>
+  <div class="cert-line"></div>
+  <div class="cert-body" style="font-size:16px;">
+    Bu belge, yukarıda adı geçen katılımcının<br>
+    4 oturum (8 saat) süren KamuKOD Atölye 210 programını<br>
+    başarıyla tamamladığını belgelendirir.
+  </div>
+  <div class="cert-footer">
+    <span>Tarih: ____ / ____ / 2026</span>
+    <span>KamuKOD & KamuYZ APA</span>
+  </div>
+</div>
+</body>
+</html>
