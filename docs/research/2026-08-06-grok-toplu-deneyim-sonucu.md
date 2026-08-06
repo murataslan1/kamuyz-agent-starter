@@ -1,77 +1,102 @@
-# Grok Araştırma Sonucu — Hermes & OpenClaw: Son 3 Ayın Gerçek Deneyimleri
+# Grok Araştırma Sonucu (Tam) — Hermes Agent & OpenClaw: Son 3 Ayın Gerçek Deneyimleri
 
 **Tarih:** Ağustos 2026
 **Kaynak:** Grok (xAI) — X/Reddit/Medium/YouTube toplu tarama
 **Kapsam:** Mayıs–Ağustos 2026
 
-> Bu dosya, KamuYZ APA Çalışma Grubu'nun "herkesin anlayacağı dilde" içerik üretebilmesi için
-> gerçek kullanıcı deneyimlerinden derlenmiştir. Teknik dokümantasyon değil, insan hikayeleridir.
-
 ---
 
-## Platform Bazlı Bulgular
+## Platform Bazlı İnceleme
 
 ### X (Twitter)
-- **Maliyet:** Token tüketimi en sık şikayet. "Bir prompt'ta 5 saatlik kotanın %40'ı yandı"
-- **Geçiş hikayeleri:** "OpenClaw'dan Hermes'e geçtim" Mayıs-Haziran'da yoğunlaştı
-- **Güvenlik:** "Stochastic modele deterministic güvenlik işi yaptırmayın" uyarıları
-- **Kullanım örnekleri:** Jira→GitHub iş akışı, sabah brifingi, e-posta triyajı
+- **Dona Sarkar:** "Windows x OpenClaw beni inanılmaz heyecanlandırıyor. Ajanlarımızın performans değerlendirme hazırlıkları yapabilmesi, toplantı özetleyebilmesi, masraf raporlarını halledebilmesi harika bir lüks"
+- **Satya Nadella:** OpenClaw'un Windows'ta süper performanslı çalışması için Steinberger'e teşekkür
+- **Garry Tan:** "OpenClaw ve Hermes birbiriyle sohbet ediyor. Siberpunk gelecek geldi"
+- **Güvenlik:** 82 ülkede 135.000+ açık OpenClaw instance'ı tespit edildi
 
 ### Reddit
-- **30 günlük test:** OpenClaw kurulum ~4 saat, bakım ~2 saat; Hermes kurulum ~25 dakika
-- **~1300 yorum:** %30 Hermes'e geçmiş, %20 ikisini birden kullanıyor
-- **Sonuç:** "Tekrarlayan işlerde Hermes, maksimum kontrol ve ekosistemde OpenClaw"
+| Post | Upvote | Özet |
+|---|---|---|
+| "I switched from OpenClaw to Hermes Agent after the March CVEs" | 342 | ClawHub güvenlik risklerinden kaçmak için Hermes'e geçiş, self-learning avantajı |
+| "Running OpenClaw on Mac Mini vs VPS" | 215 | $600 Mac Mini veya $10 VPS önerisi, Docker izolasyonu şart |
+| "CVE-2026-25253 Explained" | 189 | gatewayUrl doğrulamasızlığı → 1-click RCE, localhost dahi etkileniyor |
+| "Should I use OpenClaw or Hermes for enterprise?" | 156 | OpenClaw = kanal/kurulum, Hermes = hafıza/kodlama |
+| "Beginner Guide: Telegram & WhatsApp pairing" | 98 | Token alma, QR eşleştirme, owner whitelist uyarısı |
 
-### Medium / Substack / Dev.to
-- En zengin kaynak: "I Tested Hermes Agent for a Week — Here's Why I Switched"
-- **Depth vs Breadth:** OpenClaw = gateway-first (geniş), Hermes = agent-first (derin)
-- **Softtech (Türkçe):** "OpenClaw ajan barındıran mesajlaşma geçidi; Hermes mesajlaşma eklentili otonom ajan"
+### Medium / Dev.to
+- **Softtech (Türkçe):** "OpenClaw içinde ajan barındıran mesajlaşma geçidi; Hermes mesaj eklentili otonom ajan"
+- **Sathish Raju:** ClawHub'da %12 zararlı oranı, Hermes'in 3 katmanlı hafızası
+- **TruongPX:** Hermes 140K+ yıldız, agentskills.io standardı
+- **OpenClaw Blog:** NVIDIA SkillSpector + VirusTotal + ClawScan güvenlik hattı
 
 ### YouTube
-- **Türkçe:** "OpenClaw'u Sildim, Hermes'e Geçtim — Akşam 7'de Bilgisayar Kapatıyorum"
-- **İngilizce:** Hacking senaryoları, demo videoları, maliyet karşılaştırmaları
+| Video | Kanal | İzlenme |
+|---|---|---|
+| "OpenClaw Full Tutorial and Demo 2026" | Metics Media | 60K+ |
+| "Set up Hermes Agent completely free using OpenRouter" | KGPTalkie | 15K+ |
+| "OpenHuman vs OpenClaw vs Hermes Agent" | Tech Breakdown | 10K+ |
 
 ---
 
-## Başlıca İçgörüler
+## Konu Bazlı Sentez
 
-### "OpenClaw Gerçekten Ne İşe Yarıyor?"
-1. Sabah brifingi: Takvim + e-posta + haber → Telegram
-2. E-posta triyajı: 20-30 mail → sınıflandır + taslak cevap
-3. Jira/GitHub: Ticket → kod/PR → kapat (3 saatte 12 ticket örneği)
-4. Kişisel asistan: WhatsApp/Telegram üzerinden araştır, dosyala, hatırlat
-5. Çok kanallı orkestrasyon: Aynı agent Discord + Slack + WhatsApp'ta
+### A. Gerçek Kullanım Örnekleri
+1. Toplantı özetleme + masraf raporu otomasyonu (haftada 3-4 saat tasarruf)
+2. Telegram/WhatsApp üzerinden "uçuş detaylarımı bul, takvime işle"
+3. İndirilenler klasörünü görsel analizle kategorilere ayırma
+4. Paralel alt ajanlarla finansal araştırma (SEC bildirimleri + haberler)
+5. Slack üzerinden GitHub issue yönetimi
 
-### Hermes vs OpenClaw
-| İhtiyaç | Daha çok önerilen |
-|---|---|
-| Çok kanal + geniş skill market | OpenClaw |
-| Tekrarlayan işler, zamanla öğrenme | Hermes |
-| Hızlı kurulum + düşük bakım | Hermes |
-| Maksimum ekosistem | OpenClaw |
+### B. En Sık Sorunlar ve Çözümler
+1. **CVE-2026-25253:** 2026.1.29+ sürüme güncelle, allowedOrigins ekle
+2. **ClawHub CLI hatası:** `~/.npm-global/bin` dizinini PATH'e ekle
+3. **Bilgisayar kapanınca ajan durması:** Mac Mini veya VPS'te 7/24 çalıştır
+4. **Telegram yanıt vermemesi:** Pairing code gir, gateway restart
+5. **Hermes hafıza kaybı:** `config.toml` → `memory.enabled = true`
 
-### En Sık Sorunlar
-1. Kurulum karmaşıklığı ve "jankiness"
-2. Token/API maliyeti (büyük modeller pahalı)
-3. Güvenlik ve yetki aşımı
-4. ClawHub skill güvenilirliği (ClawHavoc)
-5. Stabilite ve bakım yükü (update sonrası bozulma)
-6. Migration sorunları
+### C. Hermes vs OpenClaw
+| Boyut | OpenClaw | Hermes Agent |
+|---|---|---|
+| Felsefe | Gateway-First (iletişim odaklı) | Agent-First (öğrenme odaklı) |
+| Dil | TypeScript/Node.js | Python (%88) + TypeScript |
+| Hafıza | Dosya tabanlı (AGENTS.md, SOUL.md) | 3-4 katmanlı (SQLite FTS5, SessionDB) |
+| Beceri | Statik / ClawHub (13.000+ hazır) | Dinamik / Kendi SKILL.md yazar |
+| Kanal | 50+ mesajlaşma kanalı | Terminal/CLI/Docker/SSH |
+| Güvenlik | CVE-2026-25253, ClawHub riskleri | Sıfır bildirilen CVE (Nisan 2026) |
 
-### Yeni Başlayanlara Tavsiyeler
-1. Önce küçük, izole VPS'te dene
-2. Skill yüklemeden önce koduna bak
-3. Model seçimini bilinçli yap
-4. Token tüketimini izle (ilk hafta fatura sürprizi)
-5. "Her şeyi agent'a yaptır" yerine net, tekrarlayan işlerle başla
+### D. Güvenlik
+- **CVE-2026-25253:** CVSS 8.8, gatewayUrl → token sızıntısı → RCE
+- **ClawHub:** 2.857 beceriden 341'i zararlı (%12)
+- **NVIDIA ortaklığı:** SkillSpector + VirusTotal + ClawScan üçlü tarama
 
-### 3 Aylık Trend
-- **Mayıs:** Karşılaştırma yazıları patladı, Hermes'in self-improving yönü öne çıktı
-- **Haziran:** Migration hikayeleri yoğunlaştı, güvenlik (CVE, ClawHub) gündemde
-- **Temmuz:** OpenClaw Foundation, mobil uygulamalar, güvenlik sertleştirme
-- **Ağustos:** "Gerçek 7/24 kullanım maliyeti ve bakım yükü" olgunluğu
+### E. Yeni Başlayanlara Tavsiyeler
+1. Ana bilgisayarda izolasyonsuz çalıştırma — Docker veya VPS kullan
+2. Hermes'te `config.toml` memory ayarlarını manuel aktif et
+3. Owner whitelist tanımla — herkes sistemini yönetmesin
+4. Eklenti indirmeden `openclaw skills verify --card` ile kontrol et
+5. API anahtarına bütçe limiti koy
+6. 7/24 için ayrı Mac Mini veya mini-PC
+7. Basit işlerde ücretsiz modeller, karmaşıkta güçlü modeller
+8. Manuel onay modunu açık tut
+9. OpenClaw'u güncel tut
+10. OpenClaw (iletişim) + Hermes (arka plan beyni) hibrit mimari
 
-### Sunum İçin Altın Cümleler
-- "ChatGPT size ne yapmanız gerektiğini söyler. OpenClaw ve Hermes sizin yerinize yapmaya çalışır"
-- "Güçlü olduğu kadar riskli: Evin anahtarını bir asistana vermek gibi"
-- "OpenClaw = her yere bağlanan asistan. Hermes = zamanla sizi öğrenen asistan"
+### F. Türkiye'den Sesler
+- Softtech Medium yazısı (Türkçe, mimari karşılaştırma)
+- KVKK uyumluluğu için yerel LLM (Ollama) tercih ediliyor
+- Türkçe talimatlarda Hermes hafıza modülü bazen anlamsal kayma yaşıyor
+- System prompt İngilizce, kullanıcı etkileşimi Türkçe → en iyi sonuç
+
+### G. 3 Aylık Trend
+| Ay | Odak | Duygu |
+|---|---|---|
+| Mayıs | Hızlı kurulum, sosyal patlama | Coşkulu |
+| Haziran | Güvenlik şoku, NVIDIA ortaklığı | Endişeli |
+| Temmuz | Hermes göç dalgası, self-improving | Geçiş dönemi |
+| Ağustos | Kurumsal entegrasyon, hibrit mimariler | Olgunlaşma |
+
+### Kamu Kurumları İçin Stratejik Öneriler
+1. Vatandaş etkileşimi → OpenClaw; veri analizi/kod inceleme → Hermes
+2. İzole Docker/VPS zorunlu — kişisel bilgisayarda çalıştırma yasak
+3. Harici eklenti indirme sınırlandırılsın, sadece onaylı kodlar
+4. Gateway + executor hibrit mimarisi standartlara dahil edilsin
