@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>Hermes Agent — Teknik Derinlemesine</title>
+<style>
+  :root {
+    --bg:#0a0a14; --card:rgba(255,255,255,0.03);
+    --blue:#3b82f6; --green:#10b981; --purple:#8b5cf6;
+    --text:#f1f5f9; --muted:#64748b; --border:rgba(59,130,246,0.15);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--bg); color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    overflow:hidden; width:100vw; height:100vh;
+  }
+  #slides { width:100%; height:100%; position:relative; }
+  .slide {
+    position:absolute; inset:0; display:none;
+    padding:80px 120px; flex-direction:column; justify-content:center;
+  }
+  .slide.active { display:flex; animation:fadeSlide 0.4s ease; }
+  @keyframes fadeSlide { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+  .kicker { font-size:15px; letter-spacing:6px; text-transform:uppercase; color:var(--blue); margin-bottom:20px; }
+  h1 { font-size:52px; font-weight:800; line-height:1.15; margin-bottom:20px; }
+  h2 { font-size:38px; font-weight:700; line-height:1.2; margin-bottom:16px; }
+  h3 { font-size:24px; font-weight:600; color:var(--blue); margin-bottom:10px; }
+  p { font-size:20px; line-height:1.6; color:var(--muted); margin-bottom:14px; }
+  .big-number { font-size:100px; font-weight:800; color:var(--blue); line-height:1; }
+
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:20px 0; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin:20px 0; }
+  .card {
+    padding:28px; border-radius:14px;
+    border:1px solid var(--border); background:var(--card);
+  }
+  .card h4 { font-size:20px; font-weight:700; margin-bottom:8px; }
+  .card p { font-size:16px; color:var(--muted); }
+  .arrow { font-size:28px; color:var(--blue); text-align:center; padding:10px 0; }
+
+  .flow {
+    display:flex; align-items:center; justify-content:center;
+    gap:12px; margin:30px 0;
+  }
+  .flow-box {
+    padding:16px 24px; border-radius:12px;
+    border:1px solid var(--border);
+    background:var(--card);
+    text-align:center; font-size:17px; font-weight:600;
+  }
+  .flow-arrow { font-size:24px; color:var(--blue); }
+
+  .layer {
+    display:flex; align-items:center; gap:16px;
+    padding:16px 24px; border-radius:12px;
+    border:1px solid var(--border);
+    background:var(--card);
+    margin-bottom:10px;
+  }
+  .layer-num { font-size:28px; font-weight:800; color:var(--blue); min-width:50px; }
+  .layer-info h4 { font-size:18px; margin-bottom:2px; }
+  .layer-info p { font-size:14px; margin:0; }
+
+  #nav { position:fixed; bottom:30px; right:40px; display:flex; gap:8px; z-index:10; }
+  #nav button {
+    width:40px; height:40px; border-radius:50%;
+    border:1px solid var(--border); background:rgba(255,255,255,0.05);
+    color:var(--text); font-size:18px; cursor:pointer;
+  }
+  #nav button:hover { background:rgba(59,130,246,0.2); }
+  #counter { color:var(--muted); font-size:14px; align-self:center; margin:0 12px; }
+  .glow {
+    position:fixed; width:500px; height:500px; border-radius:50%;
+    background:radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+    pointer-events:none; top:50%; left:50%; transform:translate(-50%,-50%);
+  }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div id="slides" onclick="next()">
+
+<!-- 1: KAPAK -->
+<div class="slide active">
+  <div class="kicker">Hermes Agent Derinlemesine</div>
+  <h1>Kendi Kendine Öğrenen<br>Yapay Zeka Ajanı</h1>
+  <p style="font-size:24px; margin-top:12px;">Nous Research · MIT Lisans · Açık Kaynak</p>
+  <div style="margin-top:40px; display:flex; gap:40px; color:var(--muted); font-size:17px;">
+    <div>🐍 Python (%88)</div>
+    <div>🧠 Kendi skill'ini yazar</div>
+    <div>🔄 Kapalı devre öğrenme</div>
+  </div>
+</div>
+
+<!-- 2: LEARNING LOOP -->
+<div class="slide">
+  <div class="kicker">Temel İnovasyon</div>
+  <h2>Kapalı Devre Öğrenme Döngüsü</h2>
+  <p>Hermes'i diğer tüm ajanlardan ayıran mekanizma:</p>
+  <div class="flow" style="margin-top:30px;">
+    <div class="flow-box">Görev</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Tamamla</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Analiz et</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">SKILL.md oluştur</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Kullandıkça iyileştir</div>
+  </div>
+  <p style="margin-top:24px; text-align:center;">Bu döngü sayesinde ajan <strong style="color:var(--text);">zamanla sana özel bir uzman</strong> haline gelir. Ne kadar kullanırsan, o kadar iyi olur.</p>
+</div>
+
+<!-- 3: 4 KATMAN HAFIZA -->
+<div class="slide">
+  <div class="kicker">Mimari</div>
+  <h2>4 Katmanlı Hafıza Sistemi</h2>
+  <div style="margin-top:24px;">
+    <div class="layer">
+      <div class="layer-num">L1</div>
+      <div class="layer-info">
+        <h4>Session Context</h4>
+        <p>O anki konuşma, aktif görev. Oturum kapanınca silinir.</p>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-num">L2</div>
+      <div class="layer-info">
+        <h4>Persisted Facts</h4>
+        <p>~2.200 karakter (MEMORY.md) + ~1.375 (USER.md). Sen silene kadar kalır.</p>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-num">L3</div>
+      <div class="layer-info">
+        <h4>Session Archive</h4>
+        <p>SQLite FTS5. Tüm geçmiş oturumlar. Tam metin aramayla bulunur.</p>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-num">L4</div>
+      <div class="layer-info">
+        <h4>Procedural Skills</h4>
+        <p>Kendi yazdığı SKILL.md yetenekleri. İhtiyaç anında dinamik yüklenir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4: HERMES vs OPENCLAW -->
+<div class="slide">
+  <div class="kicker">Karşılaştırma</div>
+  <h2>Hermes vs OpenClaw</h2>
+  <div class="grid2" style="margin-top:24px;">
+    <div class="card">
+      <h4>🦞 OpenClaw</h4>
+      <p><strong>Gateway-first:</strong> "Her yere bağlan"</p>
+      <p style="margin-top:8px;">TypeScript · 50+ kanal · 13.000+ hazır skill · ClawHub marketplace</p>
+      <p style="margin-top:12px; font-size:15px; color:var(--muted);">İdeal: Çok kanallı orkestrasyon, hızlı kurulum, geniş ekosistem</p>
+    </div>
+    <div class="card">
+      <h4>🧠 Hermes Agent</h4>
+      <p><strong>Agent-first:</strong> "Kendini geliştir"</p>
+      <p style="margin-top:8px;">Python · 4 katman hafıza · Kendi skill'ini yazar · Sıfır CVE</p>
+      <p style="margin-top:12px; font-size:15px; color:var(--muted);">İdeal: Uzun vadeli öğrenme, tekrarlayan görevler, derinlemesine iş</p>
+    </div>
+  </div>
+  <div class="quote" style="margin-top:24px;">"İkisini birlikte kullananlar: OpenClaw dış dünyayla iletişimi yöneten kapı, Hermes arkadaki beyin."</div>
+</div>
+
+<!-- 5: GERÇEK SONUÇLAR -->
+<div class="slide">
+  <div class="kicker">Sonuçlar</div>
+  <h2>Gerçek kullanıcı deneyimleri</h2>
+  <div class="grid2" style="margin-top:30px;">
+    <div class="card">
+      <div class="big-number" style="font-size:60px;">25 dk</div>
+      <p>Hermes kurulum süresi (OpenClaw: ~4 saat)</p>
+    </div>
+    <div class="card">
+      <div class="big-number" style="font-size:60px;">%70</div>
+      <p>Gece alarmlarının insansız çözülme oranı</p>
+    </div>
+    <div class="card">
+      <div class="big-number" style="font-size:60px;">342</div>
+      <p>Upvote: "Hermes'e geçince 1 hafta müdahalesiz çalıştı"</p>
+    </div>
+    <div class="card">
+      <div class="big-number" style="font-size:60px;">0</div>
+      <p>Bildirilen CVE (Nisan 2026 itibarıyla)</p>
+    </div>
+  </div>
+</div>
+
+<!-- 6: CTA -->
+<div class="slide" style="align-items:center; text-align:center;">
+  <div class="kicker">Öğrenmeye hazır mısın?</div>
+  <h2>Kendi kendine öğrenen<br>ajanını kur</h2>
+  <p style="font-size:22px; margin-top:16px;">Açık kaynak · Güvenli · Türkçe</p>
+  <div style="margin-top:40px;">
+    <a class="cta-btn" href="https://kamukod.lovable.app/atolye/210" target="_blank" style="display:inline-block;padding:18px 48px;border-radius:50px;border:2px solid rgba(59,130,246,0.5);background:rgba(59,130,246,0.15);color:var(--text);font-size:22px;font-weight:700;text-decoration:none;">KamuKOD 210 →</a>
+  </div>
+  <p style="margin-top:30px; font-size:16px;color:var(--muted);">github.com/murataslan1/kamuyz-agent-starter</p>
+</div>
+
+</div>
+<div id="nav">
+  <button onclick="prev()">◀</button>
+  <span id="counter">1 / 6</span>
+  <button onclick="next()">▶</button>
+</div>
+<script>
+  let c=0; const s=document.querySelectorAll('.slide'), o=document.getElementById('counter');
+  function show(i){ s[c].classList.remove('active'); c=(i+s.length)%s.length; s[c].classList.add('active'); o.textContent=`${c+1} / ${s.length}`; }
+  function next(){ show(c+1) } function prev(){ show(c-1) }
+  document.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()} if(e.key==='ArrowLeft'){e.preventDefault();prev()} if(e.key==='Home'){e.preventDefault();show(0)} if(e.key==='End'){e.preventDefault();show(s.length-1)} });
+</script>
+</body>
+</html>
