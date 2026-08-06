@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><title>Kurumsal B2B Kullanım Vakaları — OpenClaw & Hermes</title>
+<style>
+  :root{--bg:#0D0D0D;--text:#f1f5f9;--accent:#D4856A;--muted:#94a3b8;--border:rgba(255,255,255,0.08);--card:rgba(255,255,255,0.03)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;display:flex;justify-content:center;padding:40px}
+  .page{width:1000px;padding:60px 70px;border:1px solid var(--border);border-radius:20px}
+  .k{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-family:'Space Mono',monospace}
+  h1{font-size:52px;font-weight:800;line-height:1.1;margin-bottom:12px}
+  h2{font-size:32px;font-weight:700;color:var(--accent);margin:30px 0 12px}
+  h3{font-size:22px;font-weight:600;margin:16px 0 8px}
+  p,li{font-size:16px;line-height:1.7;color:var(--muted)}
+  ul,ol{padding-left:20px;margin:8px 0}
+  .bar{width:60px;height:3px;background:var(--accent);margin:16px 0 28px}
+  .box{border:1px solid var(--border);border-radius:12px;padding:20px;margin:12px 0;background:var(--card)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+  table{width:100%;border-collapse:collapse;margin:16px 0}
+  th{text-align:left;padding:10px 14px;border-bottom:2px solid rgba(212,133,106,0.3);font-size:16px;color:var(--accent)}
+  td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:15px;color:var(--muted)}
+  blockquote{border-left:3px solid var(--accent);padding:12px 18px;margin:12px 0;background:rgba(212,133,106,0.05);border-radius:0 8px 8px 0;font-style:italic}
+  code{font-family:'Space Mono',monospace;font-size:14px;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px}
+  pre{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:12px 0;font-size:14px;font-family:'Space Mono',monospace}
+  .footer{margin-top:30px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+  @media print{body{background:#fff;color:#000}.page{border-color:#ccc}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="k">Finans / Bankacılık</div>
+<h1>Kurumsal B2B Kullanım Vakaları — OpenClaw & Hermes</h1>
+<p>Bu doküman, kurumsal satış görüşmelerinde kullanılmak üzere sektör bazlı kullanım senaryolarını içerir. Her vaka: sorun → çözüm → sonuç formatında.</p>
+<p>---</p>
+<h2>Finans / Bankacılık</h2>
+<h3>Vaka 1: Mevzuat Takip Ajanı</h3>
+<strong>Sorun:</strong> Haftalık SPK, BDDK, TCMB düzenlemelerini 3 kişilik ekip tarıyor. 120+ sayfa/hafta.
+<strong>Çözüm:</strong> Hermes ajanı, yayınlanan mevzuatı otomatik tarar, kurumu ilgilendiren maddeleri işaretler, özet çıkarır, ilgili departmanlara Slack'ten gönderir.
+<strong>Sonuç:</strong> Haftada 15 insan-saat tasarruf. Gözden kaçan düzenleme riski sıfıra indi.
+<h3>Vaka 2: Kredi Başvuru Ön Değerlendirme</h3>
+<strong>Sorun:</strong> Günlük 200+ kredi başvurusu manuel ön değerlendirmeden geçiyor.
+<strong>Çözüm:</strong> OpenClaw ajanı, başvuruları okuyor, kredi skoru, gelir belgesi, kefil durumunu kontrol ediyor, uygun olmayanları eliyor, uygun olanları ilgili birime Slack'ten bildiriyor.
+<strong>Sonuç:</strong> Ön değerlendirme süresi %70 kısaldı. 2 kişilik ekip, 200 başvuru yerine sadece uygun olan 40 başvuruya odaklanıyor.
+<p>---</p>
+<h2>İK / İnsan Kaynakları</h2>
+<h3>Vaka 3: Aday Ön Eleme Asistanı</h3>
+<strong>Sorun:</strong> Her pozisyon için 300+ başvuru. İK ekibi CV okumaktan işe odaklanamıyor.
+<strong>Çözüm:</strong> Hermes ajanı, gelen CV'leri pozisyon kriterlerine göre puanlıyor, uygun adayları sıralıyor, standart ret/görüşme mail'lerini atıyor.
+<strong>Sonuç:</strong> Ön eleme 3 günden 2 saate indi. Yanlış eleme oranı %15'ten %3'e düştü (ajan kriterleri tutarlı uyguluyor).
+<h3>Vaka 4: Oryantasyon Botu</h3>
+<strong>Sorun:</strong> Yeni başlayanlar aynı soruları soruyor, İK tekrar tekrar cevaplıyor.
+<strong>Çözüm:</strong> OpenClaw ajanı, şirket wiki'sini, politikaları, sık sorulan soruları öğreniyor. Yeni başlayanlar Slack/WhatsApp'tan soruyor, anında cevap alıyor.
+<strong>Sonuç:</strong> İK'nın oryantasyon yükü %60 azaldı. Yeni başlayan memnuniyeti arttı (anında cevap).
+<p>---</p>
+<h2>BT / IT Operasyon</h2>
+<h3>Vaka 5: Incident Response Ajanı</h3>
+<strong>Sorun:</strong> Gece 3'te gelen sunucu alarmına 30 dk içinde müdahale gerekiyor. Nöbetçi ekip yorgun.
+<strong>Çözüm:</strong> Hermes ajanı, alarmı alıyor → log'ları tarıyor → kök nedeni analiz ediyor → bilinen çözümü uyguluyor veya nöbetçiye özetle bildiriyor.
+<strong>Sonuç:</strong> Gece müdahale süresi 30 dk'dan 5 dk'ya indi. Kritik olmayan alarmların %70'i insansız çözülüyor.
+<h3>Vaka 6: SLA Takip ve Raporlama</h3>
+<strong>Sorun:</strong> 50+ müşteri için aylık SLA raporu hazırlamak 3 gün sürüyor.
+<strong>Çözüm:</strong> OpenClaw ajanı, her ayın 1'inde tüm müşterilerin SLA verilerini çekiyor, raporu oluşturuyor, PDF yapıp ilgili hesap yöneticisine mail atıyor.
+<strong>Sonuç:</strong> 3 günlük iş 1 saatte bitiyor. Raporlar standart formatta, hatasız.
+<p>---</p>
+<h2>Hukuk / Uyum</h2>
+<h3>Vaka 7: Sözleşme İnceleme Asistanı</h3>
+<strong>Sorun:</strong> Her sözleşme 2-3 saat avukat mesaisi. Standart maddeler tekrar tekrar okunuyor.
+<strong>Çözüm:</strong> Hermes ajanı, sözleşmeyi tarıyor → riskli maddeleri işaretliyor → şirket politikasına aykırı maddeleri belirtiyor → avukata özet sunuyor.
+<strong>Sonuç:</strong> Sözleşme başına 2 saat tasarruf. Avukatlar sadece riskli maddelere odaklanıyor.
+<h3>Vaka 8: KVKK Uyum Denetimi</h3>
+<strong>Sorun:</strong> KVKK uyum denetimi için yüzlerce doküman taranması gerekiyor.
+<strong>Çözüm:</strong> Ajan, tüm dokümanları tarıyor → kişisel veri içeren bölümleri işaretliyor → açık rıza eksikliklerini belirtiyor → uyum raporu çıkarıyor.
+<strong>Sonuç:</strong> Denetim hazırlığı 2 haftadan 2 güne indi.
+<p>---</p>
+<h2>Satış / CRM</h2>
+<h3>Vaka 9: Müşteri İçgörü Raporu</h3>
+<strong>Sorun:</strong> Satış görüşmesi öncesi müşteri hakkında bilgi toplamak 45 dk sürüyor.
+<strong>Çözüm:</strong> Hermes ajanı, "Yarın XYZ şirketiyle görüşmem var" dendiğinde → CRM'den geçmişi çekiyor → son haberleri tarıyor → LinkedIn'den muhatabın profilini getiriyor → tek sayfalık brifing hazırlıyor → WhatsApp'tan gönderiyor.
+<strong>Sonuç:</strong> Görüşme hazırlığı 45 dk'dan 2 dk'ya indi. Kapanan anlaşma oranı %22 arttı.
+<h3>Vaka 10: Teklif Takip Asistanı</h3>
+<strong>Sorun:</strong> Gönderilen 50+ teklifin durumu manuel takip ediliyor. Cevaplanmayanlar unutuluyor.
+<strong>Çözüm:</strong> OpenClaw ajanı, teklifleri takip ediyor → 3 gün cevap gelmezse hatırlatma mail'i atıyor → 7 gün olursa satışçıya Slack'ten bildiriyor → 14 gün olursa yöneticiye eskalasyon.
+<strong>Sonuç:</strong> Cevapsız teklif oranı %40'tan %8'e düştü.
+<p>---</p>
+<h2>Kamu</h2>
+<h3>Vaka 11: Vatandaş Başvuru Ön İşleme</h3>
+<strong>Sorun:</strong> Günlük 500+ vatandaş başvurusu manuel sınıflandırılıp yönlendiriliyor.
+<strong>Çözüm:</strong> Ajan, başvuruyu okuyor → türüne göre sınıflandırıyor → eksik evrak varsa otomatik bilgilendirme → uygunsa ilgili birime yönlendirme.
+<strong>Sonuç:</strong> İşlem süresi 3 günden 4 saate indi. Vatandaş memnuniyeti arttı.
+<h3>Vaka 12: Meclis/Belediye Karar Takibi</h3>
+<strong>Sorun:</strong> Belediye meclis kararlarını takip etmek için 2 personel görevli.
+<strong>Çözüm:</strong> Hermes ajanı, yayınlanan kararları tarıyor → kurumu ilgilendirenleri işaretliyor → özet çıkarıyor → ilgili müdürlüğe mail atıyor.
+<strong>Sonuç:</strong> 2 personel başka göreve kaydırıldı. Kararların atlanma riski sıfırlandı.
+<p>---</p>
+<h2>ROI Hesaplama Şablonu</h2>
+<pre>
+Kurum: [Adı]
+Süreç: [Hangi süreç otomatize edilecek?]
+<p>Mevcut durum:
+<ul>
+<li>Çalışan kişi sayısı: [N]</li>
+<li>Haftalık harcanan saat: [S]</li>
+<li>Aylık maliyet (brüt): [S × 4 × saatlik_maliyet × N]</li></p>
+<p></ul>
+Ajanlı durum:
+<ul>
+<li>İnsan müdahalesi: [S'] (sadece kontrol/onay)</li>
+<li>Aylık maliyet: [S' × 4 × saatlik_maliyet × N] + [API/VPS maliyeti]</li></p>
+<p></ul>
+Tasarruf:
+<ul>
+<li>Aylık: [mevcut - ajanlı]</li>
+<li>Yıllık: [aylık × 12]</li>
+<li>Geri dönüş süresi: [yatırım / aylık_tasarruf] ay</li></p>
+<p></ul></pre></p>
+<div class="footer"><p>github.com/murataslan1/kamuyz-agent-starter</p></div>
+</div>
+<script>document.querySelectorAll('a').forEach(a=>{if(a.href&&!a.href.startsWith('http'))a.href='https://github.com/murataslan1/kamuyz-agent-starter/blob/main/'+a.href.split('/').slice(-3).join('/')})</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><title>Hızlı Referans Kartı — Hermes Agent</title>
+<style>
+  :root{--bg:#0D0D0D;--text:#f1f5f9;--accent:#D4856A;--muted:#94a3b8;--border:rgba(255,255,255,0.08);--card:rgba(255,255,255,0.03)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;display:flex;justify-content:center;padding:40px}
+  .page{width:1000px;padding:60px 70px;border:1px solid var(--border);border-radius:20px}
+  .k{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-family:'Space Mono',monospace}
+  h1{font-size:52px;font-weight:800;line-height:1.1;margin-bottom:12px}
+  h2{font-size:32px;font-weight:700;color:var(--accent);margin:30px 0 12px}
+  h3{font-size:22px;font-weight:600;margin:16px 0 8px}
+  p,li{font-size:16px;line-height:1.7;color:var(--muted)}
+  ul,ol{padding-left:20px;margin:8px 0}
+  .bar{width:60px;height:3px;background:var(--accent);margin:16px 0 28px}
+  .box{border:1px solid var(--border);border-radius:12px;padding:20px;margin:12px 0;background:var(--card)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+  table{width:100%;border-collapse:collapse;margin:16px 0}
+  th{text-align:left;padding:10px 14px;border-bottom:2px solid rgba(212,133,106,0.3);font-size:16px;color:var(--accent)}
+  td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:15px;color:var(--muted)}
+  blockquote{border-left:3px solid var(--accent);padding:12px 18px;margin:12px 0;background:rgba(212,133,106,0.05);border-radius:0 8px 8px 0;font-style:italic}
+  code{font-family:'Space Mono',monospace;font-size:14px;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px}
+  pre{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;margin:12px 0;font-size:14px;font-family:'Space Mono',monospace}
+  .footer{margin-top:30px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+  @media print{body{background:#fff;color:#000}.page{border-color:#ccc}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="k">Hermes Agent — Temel Komutlar</div>
+<h1>Hızlı Referans Kartı — Hermes Agent</h1>
+<p>Bu kart, workshop katılımcılarına oturum sonunda dağıtılmak üzere hazırlanmıştır. Tek sayfaya sığar.</p>
+<p>---</p>
+<h2>Hermes Agent — Temel Komutlar</h2>
+<pre>bash
+<h1>Kurulum (güvenli paket)</h1>
+curl -fsSL https://raw.githubusercontent.com/murataslan1/kamuyz-agent-starter/main/hermes-paket/install.sh | bash
+<h1>Gateway başlat/durdur/durum</h1>
+openclaw gateway start
+openclaw gateway stop
+openclaw gateway status
+<h1>Telegram pairing (güvenli eşleştirme)</h1>
+openclaw pairing list telegram
+openclaw pairing approve telegram <KOD> --notify
+<h1>Docker ile yönetim</h1>
+cd ~/.hermes-paket
+docker compose up -d
+docker compose down
+docker compose logs -f
+</pre>
+<p>---</p>
+<h2>Hermes — 4 Katmanlı Hafıza</h2>
+<p>| Katman | İsim | Ne? |
+|---|---|---|
+| L1 | Session Context | Anlık konuşma, oturum kapanınca silinir |
+| L2 | Persisted Facts | MEMORY.md (~2.200 karakter), kalıcı |
+| L3 | Session Archive | SQLite FTS5, tüm geçmiş aranabilir |
+| L4 | Procedural Skills | Kendi yazdığı SKILL.md, dinamik yüklenir |</p>
+<p>---</p>
+<h2>Hermes — Öğrenme Döngüsü</h2>
+<pre>
+GÖREV → TAMAMLA → ANALİZ → SKILL.md → TEKRAR KULLAN → İYİLEŞTİR
+</pre>
+<p>---</p>
+<h2>Güvenlik Kontrol Listesi (ilk 5)</h2>
+<ul>
+<li>[ ] Gateway sadece 127.0.0.1'te (loopback)</li>
+<li>[ ] Non-root kullanıcı (Docker: user "1000:1000")</li>
+<li>[ ] Sandbox aktif (mode: isolated)</li>
+<li>[ ] Telegram: dmPolicy "pairing"</li>
+<li>[ ] Versiyon >= 2026.1.29 (CVE-2026-25253 yamalı)</li>
+<p></ul>
+---</p>
+<h2>Sık Kullanılan Adresler</h2>
+<p>| Ne? | Link |
+|---|---|
+| GitHub repo | github.com/murataslan1/kamuyz-agent-starter |
+| KamuKOD 210 | kamukod.lovable.app/atolye/210 |
+| OpenClaw docs | docs.openclaw.ai |
+| Hermes docs | hermes-agent.nousresearch.com |
+| OpenClaw repo | github.com/openclaw/openclaw |
+| Hermes repo | github.com/nousresearch/hermes-agent |</p>
+<p>---</p>
+<h2>Karar Ağacı: OpenClaw vs Hermes</h2>
+<pre>
+Çok kanal (WhatsApp, Telegram, Slack...) → OpenClaw
+Kendi kendine öğrensin, tekrarlayan iş → Hermes
+Hızlı kurulum, düşük bakım → Hermes
+Geniş ekosistem, çok eklenti → OpenClaw
+İkisi birden → OpenClaw (iletişim) + Hermes (beyin)
+</pre>
+<div class="footer"><p>github.com/murataslan1/kamuyz-agent-starter</p></div>
+</div>
+<script>document.querySelectorAll('a').forEach(a=>{if(a.href&&!a.href.startsWith('http'))a.href='https://github.com/murataslan1/kamuyz-agent-starter/blob/main/'+a.href.split('/').slice(-3).join('/')})</script>
+</body>
+</html>
