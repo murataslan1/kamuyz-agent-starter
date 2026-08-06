@@ -144,10 +144,41 @@ Her kullandığında biraz daha iyi olur. İşte bu yüzden farklı.
 
 ---
 
-## KamuKod ile bağlantı
+## KamuKOD ile Tamamlayıcı Zincir
 
-KamuKod: **"Nasıl kurulur?"** (4 haftalık uygulamalı kurs)  
-Bu repo: **"Hermes nedir, nasıl çalışır, güvenli mi, ne zaman kullanılır?"** (açık erişim)
+KamuKOD ve KamuYZ birbirini besleyen iki kanaldır. Birlikte tam öğrenme paketi oluşturur:
+
+```
+KamuKOD 210 (ücretli kurs)          KamuYZ E1-E2-E3 (ücretsiz)
+"Nasıl kurulur, nasıl işletilir?"    "Nedir, güvenli mi, ne zaman?"
+4 oturum · 8 saat · Zoom             3 etkinlik · açık erişim · YouTube
+       │                                      │
+       └──────────── birbirine yönlendirir ─────────┘
+                              │
+                    KamuKOD 220 (kurumsal)
+                    "Enterprise Agentic Design"
+                    1 gün · yüz yüze · B2B
+```
+
+| Ne istiyorsun? | Nereden başla? |
+|---|---|
+| "Ne olduğunu anlamak istiyorum" | KamuYZ E1 (ücretsiz webinar) |
+| "Kendi ajanımı kurmak istiyorum" | KamuKOD 210 (ücretli kurs) |
+| "Kurumuma entegre etmek istiyorum" | [B2B Paketler](docs/B2B-paket.md) |
+| "Güvenlik denetimi yapmak istiyorum" | [SECURITY.md](SECURITY.md) |
+| "ISO 42001 uyumlu işletim prosedürleri" | [B2B Paket 3](docs/B2B-paket.md) |
+
+🔗 **KamuKOD:** [kamukod.lovable.app](https://kamukod.lovable.app) — Atölye 210: OpenClaw-Hermes
+
+---
+
+## Güvenli Hermes Paketi (Tek Komutla)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/murataslan1/kamuyz-agent-starter/main/hermes-paket/install.sh | bash
+```
+
+Güvenlik varsayılanları açık, Docker izolasyonlu, non-root, sandbox aktif. Detaylar: [hermes-paket/](hermes-paket/)
 
 ---
 
