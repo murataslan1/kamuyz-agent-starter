@@ -1,9 +1,8 @@
 KamuYZ APA Çalışma Grubu
 OpenClaw & Hermes — Açık Kaynak Agentic Framework Programı · Ağustos 2026 Güncellemesi
 
-1. Amaç ve konumlanma (değişmedi)
+1. Amaç ve konumlanma
 KamuYZ APA çalışma grubu olarak OpenClaw ve Hermes üzerine kamuya açık etkinlikler düzenleyecek ve kalıcı Türkçe çıktılar üreteceğiz. Hedef hem öğrenmek hem öğretmek, hem de grubun ve KamuYZ'nin görünürlüğünü artırmak. Tüm çıktılar vendor-nötr ve açık erişimdir.
-KamuKod ile iş bölümü: KamuKod üyelik bazlı 4 haftalık uygulamalı kurs ile "nasıl kurulur" sorusunu; biz kamuya açık etkinlikler ve yayınlarla "bu nedir, güvenli mi, kurum ne zaman kullanmalı" sorusunu cevaplıyoruz. Aynı kişiler iki tarafta da sunabilir; içerik çakışmaz, birbirini besler.
 
 2. Etkinlikler (aylık ritim)
 
@@ -18,11 +17,9 @@ Format: Webinar / panel, 90 dk
 Durum: ✅ İçerik taslağı hazır. Örnek vaka: Çin kısıtlaması + CVE-2026-25253 + ClawHavoc
 
 E3 — Hands-on atölye
-İçerik: kamuyz-agent-starter reposundan canlı kurulum: tek agent + Telegram + güvenlik checklist'i. Derinleşmek isteyen KamuKod kursuna yönlendirilir.
+İçerik: kamuyz-agent-starter reposundan canlı kurulum: tek agent + Telegram + güvenlik checklist'i.
 Format: Online atölye, 2-3 saat, sınırlı kontenjan
 Durum: ✅ İçerik + demo script'i + güvenli kurulum paketi hazır
-
-Not: Etkinlik saatleri KamuKod ders akşamlarıyla (20:30-22:30) çakıştırılmaz; sunucular ortak.
 
 3. Kalıcı çıktılar — Durum Güncellemesi
 
@@ -45,35 +42,32 @@ English: github.com/murataslan1/kamuyz-agent-starter/blob/main/docs/whitepaper/k
 
 YouTube kayıtları + LinkedIn özetleri — ⏳ Etkinlikler sonrası
 
-Araştırma raporları (planlanmamış ek çıktı) — ✅ TAMAM
+Araştırma raporları — ✅ TAMAM
 - Gemini Deep Research: 30 kaynaklı derin inceleme (mimari, güvenlik, regülasyon, KVKK/DDO)
 - Grok Ekosistem Taraması: Teknik ekosistem, OpenClaw & Hermes karşılaştırması
 - Grok Toplu Deneyim: Mayıs-Ağustos 2026, X/Reddit/Medium/YouTube gerçek kullanıcı deneyimleri
 
-4. Ek Çıktılar (orijinal planda yoktu, süreçte eklendi)
+4. Ek Çıktılar (süreçte eklendi)
 
 Güvenli Hermes Paketi
 Tek komutla kurulum, sandbox aktif, non-root, dışa kapalı, audit log. Production öncesi 24 maddelik kontrol.
 github.com/murataslan1/kamuyz-agent-starter/tree/main/hermes-paket
 
 KamuYZ Workshop Agent Export
-AGENT.md + HEARTBEAT.md + RULES.md + 8 skill (müfredat, demo, lojistik, B2B teklif, içerik, değerlendirme, performans, topluluk). Meta Ads Agent Export yapısı referans alınarak.
+AGENT.md + HEARTBEAT.md + RULES.md + 8 skill (müfredat, demo, lojistik, teklif, içerik, değerlendirme, performans, topluluk). Meta Ads Agent Export yapısı referans alınarak.
 github.com/murataslan1/kamuyz-agent-starter/tree/main/kamu-yz-agent-export
-
-B2B Kullanım Vakaları (12 sektör)
-Finans, İK, BT, hukuk, satış, kamu için somut senaryolar + ROI hesaplama şablonu.
 
 Kurumsal B2B Paketleri
 3 kademeli hizmet paketi: Farkındalık (ücretsiz), Prototip, Entegrasyon (kurumsal). ISO 42001 uyumlu işletim prosedürleri dahil.
 
-KamuKOD 210 ile Çapraz Yönlendirme
-KamuKOD 210 (ücretli kurs) ↔ KamuYZ E1-E2-E3 (ücretsiz) ↔ B2B Paketler (kurumsal). Birbirini besleyen zincir yapısı kuruldu.
+Kullanım Vakaları (12 sektör)
+Finans, İK, BT, hukuk, satış, kamu için somut senaryolar + ROI hesaplama şablonu.
 
 5. Sonraki Adımlar
 - E1, E2, E3 etkinliklerinin planlanması ve duyurulması (Ağustos/Eylül 2026)
 - YouTube kanalı kurulumu ve etkinlik kayıtlarının yüklenmesi
 - LinkedIn içerik takviminin başlatılması
 - Medium/Substack'te yazı serisinin yayınlanması
-- KamuKod 210'a katılımcı yönlendirme
+- Kurumsal B2B görüşmelerin başlatılması
 
 Çalışma düzeni: 2 haftalık sprintler, haftada 1 kısa senkron (30 dk). Asenkron iş WhatsApp grubu ve GDrive üzerinden. Görev dağılımı kickoff toplantısında gönüllülük esasıyla belirlenir.
