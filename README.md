@@ -1,73 +1,118 @@
 # kamuyz-agent-starter
 
-**Türkçe dokümante, güvenlik-öncelikli OpenClaw / Hermes başlangıç şablonu.**
+> Kendi yapay zeka asistanını kur. Güvenli. Ücretsiz. Türkçe.
 
-KamuYZ APA Çalışma Grubu tarafından hazırlanan bu repo, kamu ve özel sektörde agentic AI sistemlerini güvenli şekilde kurmak isteyen ekipler için referans başlangıç noktasıdır.
+Bu rehber, **OpenClaw** ve **Hermes** adlı açık kaynak yapay zeka ajanlarını kendi bilgisayarına kurmanı ve Telegram gibi uygulamalar üzerinden kullanmanı sağlar. Tüm adımlar güvenlik öncelikli olarak hazırlanmıştır — kurduğun sistem dışarıya kapalı, verilerin sana ait olur.
 
-## Amaç
+---
 
-- OpenClaw ve Hermes'i güvenli varsayılanlarla, üretime hazır şekilde kurmak
-- Kurumların "bu nedir, güvenli mi, ne zaman kullanmalıyım" sorularına cevap vermek
-- E3 Hands-on Atölyesi'nde canlı kurulum yapılabilir seviyede dokümantasyon sağlamak
+## Nedir bu?
 
-## Hızlı Başlangıç
+Günlük hayatta ChatGPT'ye soru sorup cevap alıyorsun. **Yapay zeka ajanı (agent)** bundan bir adım ötesi:
+
+- Sadece cevap vermez, **senin için iş yapar**
+- Dosyalarını okuyabilir, yazı yazabilir, e-posta gönderebilir
+- Telegram, WhatsApp gibi her gün kullandığın uygulamalardan komut alabilir
+- 7/24 arka planda çalışır, sen sormasan da görevleri takip eder
+
+Bu repo, böyle bir sistemi **güvenli şekilde** kurmak için ihtiyacın olan her şeyi içerir.
+
+---
+
+## Nasıl kurarım? (5 dakika)
 
 ```bash
-# OpenClaw kurulumu
+# 1. OpenClaw'u bilgisayarına kur
 curl -fsSL https://openclaw.ai/install.sh | bash
 
-# İlk yapılandırma
+# 2. İlk kurulum sihirbazını başlat (sana sorular soracak)
 openclaw onboard --install-daemon
 
-# Gateway durumu
+# 3. Çalıştığını kontrol et
 openclaw gateway status
 ```
 
-Güvenli üretim kurulumu için [docs/docker-compose.yml](docs/docker-compose.yml) ve [SECURITY.md](SECURITY.md) dosyalarına bakın.
+Hepsi bu. Artık ajanın arka planda çalışıyor. Telegram'a bağlamak için [detaylı kurulum rehberine](docs/events/E3-hands-on-atolye.md) bak.
 
-## İçindekiler
+---
 
-```
-kamuyz-agent-starter/
-├── README.md                   # Bu dosya
-├── CONTEXT.md                  # Proje terimleri sözlüğü
-├── GLOSSARY.md                 # TR-EN terimler sözlüğü
-├── LEARNING.md                 # 2 haftalık ekip öğrenme planı
-├── SECURITY.md                 # Üretim öncesi güvenlik checklist'i
-├── docker-compose.yml          # Güvenli Docker kurulumu
-├── skills/                     # Agent skill'leri
-│   └── engineering/            # Mühendislik skill'leri
-├── docs/
-│   ├── adr/                    # Mimari karar kayıtları
-│   ├── research/               # Araştırma raporları
-│   ├── events/                  # Etkinlik içerik taslakları
-│   └── sprint-plan.md          # Sprint görev planı
-└── config/                     # Örnek yapılandırma dosyaları
-    └── telegram-pairing.json5  # Telegram + pairing örneği
-```
+## Ne işe yarar?
 
-## Kimler İçin?
-
-- Kamu BT personeli
-- Agentic AI'yi kurum içinde denemek isteyen ekipler
-- Güvenlik-öncelikli deployment yapmak isteyen herkes
-
-## KamuKod ile İş Bölümü
-
-| KamuKod | kamuyz-agent-starter (biz) |
+| Sen ne dersin | Ajan ne yapar |
 |---|---|
-| "Nasıl kurulur?" | "Bu nedir, güvenli mi, ne zaman kullanmalı?" |
-| 4 haftalık uygulamalı kurs | Kamuya açık etkinlikler + kalıcı çıktılar |
-| Üyelik bazlı | Açık erişim |
+| "Bugünkü toplantılarımı özetle" | Takvimini okur, özet çıkarır, Telegram'dan sana gönderir |
+| "Bu 10 PDF'i tara, önemli yerleri işaretle" | Dosyaları okur, kritik bölümleri bulur |
+| "Her sabah 8'de hava durumunu söyle" | Her gün aynı saatte otomatik çalışır |
+| "Sunucu loglarını kontrol et, hata varsa bildir" | Sistem loglarını tarar, sorun bulursa uyarır |
+
+---
+
+## Güvenli mi?
+
+Bu repoyu diğerlerinden ayıran en önemli şey: **önce güvenlik**.
+
+Bir yapay zeka ajanına dosyalarını okuma, komut çalıştırma yetkisi veriyorsun. Bu yanlış yapılandırılırsa veri sızıntısına yol açabilir. O yüzden:
+
+- Kurulum **varsayılan olarak güvenli** ayarlarla gelir
+- Sistem dışarıya kapalı, sadece senin bilgisayarında çalışır
+- 24 maddelik güvenlik kontrol listesi ([SECURITY.md](SECURITY.md))
+- Telegram'da kimlerin ajana erişebileceğini sen belirlersin (onay koduyla)
+
+---
+
+## Bu repoda neler var?
+
+| Dosya | İçindeki |
+|---|---|
+| [LEARNING.md](LEARNING.md) | Ekibin 2 haftada öğreneceği her şey (okuma listesi) |
+| [SECURITY.md](SECURITY.md) | Sistemi canlıya almadan önce kontrol edilecek 24 madde |
+| [CONTEXT.md](CONTEXT.md) | Projede kullanılan terimlerin tanımları |
+| [GLOSSARY.md](GLOSSARY.md) | İngilizce-Türkçe terimler sözlüğü |
+| [docker-compose.yml](docker-compose.yml) | Docker ile güvenli kurulum dosyası |
+| [config/](config/) | Örnek yapılandırma dosyaları |
+| [docs/sprint-plan.md](docs/sprint-plan.md) | İş takvimi ve görev dağılımı |
+| [docs/events/](docs/events/) | 3 etkinliğin içerik taslakları |
+| [docs/research/](docs/research/) | Yapay zeka ajanları hakkında derin araştırma raporları |
+
+---
+
+## Kimler kullanabilir?
+
+- Kamu kurumlarında çalışan BT personeli
+- Şirketinde yapay zeka ajanı denemek isteyen ekipler
+- Kendi asistanını kurmak isteyen yazılımcılar
+- "Bu ajan olayı nedir?" diye merak eden herkes
+
+Teknik bilgi şart değil. Komut satırına yazı yazmayı biliyorsan yeter.
+
+---
 
 ## Etkinlikler
 
-| # | Etkinlik | Format |
+KamuYZ APA Çalışma Grubu olarak 3 açık etkinlik düzenliyoruz. Herkes katılabilir.
+
+| Sıra | Konu | Süre |
 |---|---|---|
-| E1 | OpenClaw nedir, ne yapar? Hermes ve agentic dalga | Webinar, 90 dk |
-| E2 | Otonom sistemlerin gerçeği: güvenlik ve zorluklar | Webinar/Panel, 90 dk |
-| E3 | Hands-on atölye — canlı kurulum | Online atölye, 2-3 saat |
+| E1 | Yapay zeka ajanı nedir? Ne işe yarar? | 90 dk webinar |
+| E2 | Güvenlik riskleri ve gerçek dünyadan örnekler | 90 dk panel |
+| E3 | Canlı kurulum atölyesi (bu repoyu kullanarak) | 2-3 saat |
+
+---
+
+## KamuKod ile bağlantı
+
+KamuKod kursu sana **"nasıl kurulur"** sorusunun cevabını uygulamalı olarak öğretir.  
+Biz burada **"bu nedir, güvenli mi, ne zaman kullanılır"** sorularına cevap veriyoruz.  
+İkisi birbirini tamamlar, çakışmaz.
+
+---
+
+## Katkı
+
+Repo'ya katkıda bulunmak ister misin? Issue açabilir, PR gönderebilirsin. Başlamak için [CONTEXT.md](CONTEXT.md)'i oku.
+
+---
 
 ## Lisans
 
-MIT
+MIT — istediğin gibi kullan, değiştir, paylaş.
