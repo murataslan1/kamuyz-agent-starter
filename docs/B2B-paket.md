@@ -76,7 +76,6 @@ Her atölye bir sonrakine yönlendirir. Biri bitince diğeri başlar. Zincirleme
 |---|---|---|
 | **KamuKOD** | Ücretli, derinlemesine kurs | Geliştiriciler, teknik liderler |
 | **KamuYZ APA** | Açık, ücretsiz etkinlikler | Kamu BT, karar vericiler, meraklılar |
-| **Ceyda Hoca** | Akademik dağıtım, güven odaklı | Üniversiteler, kamu kurumları |
 | **LinkedIn** | Profesyonel ağ, B2B lead | Kurumsal karar vericiler |
 | **YouTube** | Geniş kitle, kayıt arşivi | Genel izleyici |
 | **GitHub** | Geliştirici topluluğu | Yazılımcılar |
